@@ -76,7 +76,7 @@ int IntList::max() const {
 // 0 if list is empty
 double IntList::average() const {
     if (!head)
-        return 0,0;
+        return 0.0;
     double averageNum = sum() / count();
     
     return averageNum; 
@@ -84,10 +84,12 @@ double IntList::average() const {
 
 // inserts value as new node at beginning of list
 void IntList::push_front(int value) {
-    Node* cur = new Node;
-    cur -> info = value;
-    cur -> next = head;
-    head = cur;
+    Node* n = new Node{value, head};
+    head = n;
+
+    if (tail == nullptr) {
+        tail = head;
+    }
 }
 
 // append value at end of list
