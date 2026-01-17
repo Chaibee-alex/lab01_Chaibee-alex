@@ -77,7 +77,7 @@ int IntList::max() const {
 double IntList::average() const {
     if (!head)
         return 0.0;
-    double averageNum = sum() / count();
+    double averageNum = sum()*1.0 / count()*1.0;
     
     return averageNum; 
 }
