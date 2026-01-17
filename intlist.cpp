@@ -61,6 +61,7 @@ bool IntList::contains(int value) const {
 
 // returns maximum value in list, or 0 if empty list
 int IntList::max() const {
+    if (head == nullptr) return 0;
     Node* curr = head;
     int maxNum = head -> info;
     while (curr)
